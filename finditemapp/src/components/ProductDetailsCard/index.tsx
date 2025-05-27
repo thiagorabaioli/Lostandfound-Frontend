@@ -1,8 +1,14 @@
 import './styles.css';
 import computerImg from '../../assets/computer.png';
 import ProductCategory from '../ProductCategory';
+import { UserAppDTO } from '../../models/userapp';
 
-export default function ProductDetailsCard() {
+
+type Props = {
+    userapp: UserAppDTO;
+}
+
+export default function ProductDetailsCard({userapp}: Props) {
 
     return (
         <div className="dsc-card dsc-mb20">
@@ -10,8 +16,8 @@ export default function ProductDetailsCard() {
                 <img src={computerImg} alt="Computador" />
             </div>
             <div className="dsc-product-details-bottom">
-                <h3>R$ 5000,00</h3>
-                <h4>Computador Gamer XT</h4>
+                <h3>{userapp.id}</h3>
+                <h4>{userapp.name}</h4>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
